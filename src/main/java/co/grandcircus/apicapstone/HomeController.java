@@ -85,7 +85,23 @@ public class HomeController {
 		for(int i=0;i<temp.size();i++) {
 			if(temp.get(i).getVote_average()>=vote_average && temp.get(i).getVote_average()<vote_average+1){
 				
-				movies.add(temp.get(i));
+				//movies.add(temp.get(i));
+				movies.add(ms.getMovieById(temp.get(i).getId()));
+			}
+			
+		}
+		model.addAttribute("movies",movies);
+		return "result";
+	}
+	@RequestMapping("/search-result-length")
+	public String searchByLength(Model model,@RequestParam(required=false) Integer runtime) {
+		List<Movie> temp=ms.getMovies();
+		Movie m=null;
+		List<Movie> movies=new ArrayList<>();
+		for(int i=0;i<temp.size();i++) {
+			 m=ms.getMovieById(temp.get(i).getId());
+			if(m.getRuntime()>=runtime-10 && m.getRuntime()<runtime+10){
+					movies.add(m);
 			}
 			
 		}

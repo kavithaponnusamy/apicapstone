@@ -11,7 +11,9 @@
 
 	
 <c:forEach var="movie" items="${movies }">
-<p><c:out value="${movie.title}"/></p>
+<Strong><p><c:out value="${movie.title}"/></p></Strong>
+<p>Avg: ${movie.vote_average }<p>
+<p>Runtime: ${movie.runtime }</p>
 </c:forEach>
 
 
