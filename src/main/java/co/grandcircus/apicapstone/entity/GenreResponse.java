@@ -2,7 +2,7 @@ package co.grandcircus.apicapstone.entity;
 
 import java.util.List;
 
-import co.grandcircus.apicapstone.Genres;
+
 
 public class GenreResponse {
 	
