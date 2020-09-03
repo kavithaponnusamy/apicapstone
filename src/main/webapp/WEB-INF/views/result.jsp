@@ -11,11 +11,11 @@
 
 	
 <c:forEach var="movie" items="${movies }">
-<Strong><p><c:out value="${movie.title}"/></p></Strong>
+<Strong><p><a href="movie-details?id=<c:out value="${movie.id}"/>">${movie.title}</a></p></Strong>
 <p>Avg: ${movie.vote_average }<p>
 <p>Runtime: ${movie.runtime }</p>
 </c:forEach>
 
-
+<%@include file="partials/footer.jsp" %>
 </body>
 </html>
