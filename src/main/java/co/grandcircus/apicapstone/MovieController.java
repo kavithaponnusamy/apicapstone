@@ -30,8 +30,7 @@ public class MovieController {
 		MovieList movie=apiServ.movieList();
 		//String title=movie.getTitle();
 		model.addAttribute("movie",movie);
-		System.out.println(movie);
-		System.out.println(movie.getResults().get(1));
+		
 		return "result";
 	}
 */
