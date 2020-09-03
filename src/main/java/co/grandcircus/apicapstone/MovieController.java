@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-/*
+
 @Controller
 public class MovieController {
 	
@@ -20,19 +20,28 @@ public class MovieController {
 	@Autowired
 	private ApiService apiServ;
 	
-	/*@GetMapping("/")
-	public String home() {
-		return "home";
+	@GetMapping("/")
+	public String home(Model model) {
+		MovieList movie=apiServ.movieList();
+		model.addAttribute("movie",movie);
+		return "homepage";
 	}
 	
-	@GetMapping("/")
-	public String showMovies(Model model) {
+	@GetMapping("/result")
+	public String searchBy(Model model) {
 		MovieList movie=apiServ.movieList();
-		//String title=movie.getTitle();
 		model.addAttribute("movie",movie);
-		
 		return "result";
 	}
-*/
+	@GetMapping("/show-details")
+	public String showMovies(Model model, @RequestParam("id") Integer id) {
+		//MovieList movie1=apiServ.movieList();
+		Results result= apiServ.showDetails(id);		
+		System.out.println(result);
+		model.addAttribute("result",result);
+		return "result";
+		
+	}
+}
 
 

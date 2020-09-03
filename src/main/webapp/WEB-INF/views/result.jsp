@@ -5,14 +5,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Movie Details</title>
 </head>
 <body>
-<h3>Movies</h3>
-<c:forEach items="${movie.results}" var="result">
-<p>${result}</p>
-<p> </p>
-</c:forEach>
+<h3>Movie Details</h3>
 
+Id: <c:out value="${result.id}"/>
+Overview: <c:out value="${result.overview}"/>
+Vote average: <c:out value="${result.vote_average}"/>
+Popularity: <c:out value="${result.popularity}"/>
+Genre Id's: <c:out value="${result.genre_ids}"/>
+
+<p> </p>
 </body>
 </html>
+

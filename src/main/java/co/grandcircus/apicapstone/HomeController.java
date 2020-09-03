@@ -11,7 +11,7 @@ import co.grandcircus.apicapstone.services.MovieService;
 @Controller
 public class HomeController {
 
-	@Autowired
+/*	@Autowired
 	MovieService ms;
 	
 	@RequestMapping("/")
@@ -24,6 +24,6 @@ public class HomeController {
 	public String showMovieDetails(Model model, @RequestParam("id") Integer id) {
 		model.addAttribute("movie", ms.getMovieById(id));
 		return "movie-details";
-	}
+	}*/
 	
 }
