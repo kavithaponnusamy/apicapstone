@@ -1,5 +1,8 @@
 package co.grandcircus.apicapstone;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -20,8 +23,6 @@ import co.grandcircus.apicapstone.services.MovieService;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private ApiService apiServ;
 	
 	@Autowired
 	MovieService ms;
@@ -63,10 +64,19 @@ public class HomeController {
 
 		return "redirect:/favorites/";
 	}
-	/*@GetMapping("/result")
-	public String searchBy(Model model) {
-		MovieList movie=apiServ.movieList();
-		model.addAttribute("movie",movie);
+	@RequestMapping("/search-result-vote")
+	public String searchByVote(Model model,@RequestParam(required=false) Double vote_average) {
+		List<Movie> temp=ms.getMovies();
+		List<Movie> movies=new ArrayList<>();
+		for(int i=0;i<temp.size();i++) {
+			if(temp.get(i).getVote_average()>=vote_average && temp.get(i).getVote_average()<vote_average+1){
+				
+				movies.add(temp.get(i));
+			}
+			
+		}
+		model.addAttribute("movies",movies);
 		return "result";
-	}*/
+	}
+	
 }

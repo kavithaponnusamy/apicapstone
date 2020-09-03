@@ -18,6 +18,23 @@
 			<td><a href="/movie-details?id=${movie.id}">${movie.title}</a></td>
 	</c:forEach>
 </table>
+<form action="/search-result-genre" method="post">
+<label for="city">Genre</label> 
+				<select id="genres" name="genres">
+				<option value="drama">Drama</option>
+				<option value="action">Action</option>
+				<option value="animation">Animation</option>
+				<option value="Family">Family</option>				
+				</select>
+</form>
+<form action="/search-result-vote" method="post">
+<p>Vote Average<input type="number" name="vote_average" step="any" >
+<button type="submit">Submit</button></p>
+</form>
+<form action="/search-result-length" method="post">
+<p>Length<input type="number" name="length" >
+<button type="submit">Submit</button></p>
+</form>
 <%@include file="partials/footer.jsp" %>
 
 </body>
