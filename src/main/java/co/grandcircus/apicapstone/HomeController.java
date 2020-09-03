@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,10 @@ import co.grandcircus.apicapstone.services.MovieService;
 @Controller
 public class HomeController {
 
-/*	@Autowired
+	@Autowired
+	private ApiService apiServ;
+	
+	@Autowired
 	MovieService ms;
 	
 	@Autowired
@@ -36,7 +40,7 @@ public class HomeController {
 	public String showMovieDetails(Model model, @RequestParam("id") Integer id) {
 		model.addAttribute("movie", ms.getMovieById(id));
 		return "movie-details";
-	}*/
+	}
 	
 	@PostMapping("/movie-details")
 	public String addToFavoriteList(FavoriteList newFav, RedirectAttributes redir) {
@@ -59,4 +63,10 @@ public class HomeController {
 
 		return "redirect:/favorites/";
 	}
+	/*@GetMapping("/result")
+	public String searchBy(Model model) {
+		MovieList movie=apiServ.movieList();
+		model.addAttribute("movie",movie);
+		return "result";
+	}*/
 }
