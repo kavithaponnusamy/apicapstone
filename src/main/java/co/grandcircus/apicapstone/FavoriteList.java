@@ -13,6 +13,8 @@ public class FavoriteList {
 	private String title;
 	private Integer runtime;
 	private String vote_average;
+	private Integer api_id;
+	
 	public Long getId() {
 		return id;
 	}
@@ -36,6 +38,31 @@ public class FavoriteList {
 	}
 	public void setVote_average(String vote_average) {
 		this.vote_average = vote_average;
+	}
+	public Integer getApi_id() {
+		return api_id;
+	}
+	public void setApi_id(Integer api_id) {
+		this.api_id = api_id;
+	}
+	public FavoriteList(Long id, String title, Integer runtime, String vote_average, Integer api_id) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.runtime = runtime;
+		this.vote_average = vote_average;
+		this.api_id = api_id;
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "FavoriteList [id=" + id + ", title=" + title + ", runtime=" + runtime + ", vote_average=" + vote_average
+				+ ", api_id=" + api_id + "]";
+	}
+	public FavoriteList() {
+		
 	}
 	
 

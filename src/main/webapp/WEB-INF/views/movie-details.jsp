@@ -10,6 +10,7 @@
 <body>
 <h1>${movie.title}</h1>
 <br>
+<h2 class="message">${ message }</h2>
 <br>
 <h3>${movie.tagline }</h3>
 <h3>${movie.vote_average }</h3>
@@ -19,6 +20,17 @@
 <p>${genre.name}</p>
 
 </c:forEach>
+<div>
+<form method="post">
+			<input type="hidden" name="title" value="${movie.title}">
+			<input type="hidden" name="runtime" value="${movie.runtime}">
+			<input type="hidden" name="vote_average" value="${movie.vote_average}">
+			<input type="hidden" name="api_id" value="${movie.id}">
+
+			<button type="submit">Add to Favorites</button>
+
+		</form>
+</div>
 
 <%@include file="partials/footer.jsp" %>
 </body>

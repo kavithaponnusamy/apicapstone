@@ -13,5 +13,6 @@ Length<input type="number" name="length" >
 <button type="submit">Submit</button>
 
 </form>
+<%@include file="partials/footer.jsp" %>
 </body>
 </html>
