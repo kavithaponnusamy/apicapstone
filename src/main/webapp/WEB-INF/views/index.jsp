@@ -11,7 +11,7 @@
 <h2 class="message">${ message }</h2>
 <table>
 	<tr>
-	<th>Title</th>
+	<th>List of movies</th>
 	</tr>
 	<c:forEach var="movie" items="${movies }">
 		<tr>
