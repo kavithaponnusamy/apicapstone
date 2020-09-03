@@ -73,8 +73,9 @@ public class HomeController {
 	}
 	
 	@PostMapping("/genre-list")
-	public String submitGenre(Model model, @RequestParam("id") Integer id) {
-		model.addAttribute("movies", ms.getMoviesByGenre(id));
+	public String submitGenre(Model model, @RequestParam("genres") Integer genres) {
+		
+		model.addAttribute("movies", ms.getMoviesByGenre(genres));
 		return "genre-list";
 	}
 
