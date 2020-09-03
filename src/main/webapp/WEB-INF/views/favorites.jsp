@@ -8,12 +8,13 @@
 <title>Favorites</title>
 </head>
 <body>
+<h2 class="message">${ flashmessage }</h2>
 	<c:forEach var="FavoriteList" items="${favorites}">
 
 		<p><a href="/movie-details?id=${FavoriteList.api_id}">${FavoriteList.title}</a></p>
 		<p><a
 				href="
-				<c:url value="/pokemon/${pokemon.id}/delete" />"
+				<c:url value="/${FavoriteList.id}/delete" />"
 				class="btn btn-dark">Delete</a></p>
 
 	</c:forEach>
