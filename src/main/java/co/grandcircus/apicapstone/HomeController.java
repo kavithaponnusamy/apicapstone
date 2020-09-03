@@ -63,10 +63,16 @@ public class HomeController {
 
 		return "redirect:/favorites/";
 	}
-	/*@GetMapping("/result")
-	public String searchBy(Model model) {
-		MovieList movie=apiServ.movieList();
-		model.addAttribute("movie",movie);
-		return "result";
-	}*/
+	
+	@RequestMapping("/genre-list")
+	public String showGenres(Model model) {
+		model.addAttribute("genres", ms.getAllGenres());
+		return "genre-list";
+	}
+	
+	@PostMapping("/genre-list")
+	public String submitGenre(Model model, @RequestParam("id") Integer id) {
+		model.addAttribute("movies", ms.getMoviesByGenre(id));
+		return "genre-list";
+	}
 }

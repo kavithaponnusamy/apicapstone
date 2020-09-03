@@ -8,16 +8,33 @@
 <title>Favorites</title>
 </head>
 <body>
-<h2 class="message">${ flashmessage }</h2>
-	<c:forEach var="FavoriteList" items="${favorites}">
+	<h1>Your Favorites</h1>
+	<h2 class="message">${ flashmessage }</h2>
 
-		<p><a href="/movie-details?id=${FavoriteList.api_id}">${FavoriteList.title}</a></p>
-		<p><a
-				href="
+	<table class="table table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Rating</th>
+			<th>Duration</th>
+			<th>Delete?</th>
+		</tr>
+
+		<c:forEach var="FavoriteList" items="${favorites}">
+			<tr>
+				<td><a href="/movie-details?id=${FavoriteList.api_id}">${FavoriteList.title}</a>
+				</td>
+				<td>
+					<p>${FavoriteList.vote_average}</p>
+				</td>
+				<td>
+				<p>${FavoriteList.runtime }</p>
+				</td>
+				<td><a href="
 				<c:url value="/${FavoriteList.id}/delete" />"
-				class="btn btn-dark">Delete</a></p>
-
-	</c:forEach>
-<%@include file="partials/footer.jsp" %>
+					class="btn btn-dark">Delete</a></td>
+			</tr>
+		</c:forEach>
+	</table>
+	<%@include file="partials/footer.jsp"%>
 </body>
 </html>

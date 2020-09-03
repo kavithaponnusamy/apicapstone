@@ -18,6 +18,8 @@
 			<td><a href="/movie-details?id=${movie.id}">${movie.title}</a></td>
 	</c:forEach>
 </table>
+<br><br>
+<p><a href="/genre-list">List of Available Genres</a></p>
 <%@include file="partials/footer.jsp" %>
 
 </body>
