@@ -32,7 +32,7 @@
 <button type="submit">Submit</button></p>
 </form>
 <form action="/search-result-length" method="post">
-<p>Length<input type="number" name="length" >
+<p>Length<input type="number" name="runtime" >
 <button type="submit">Submit</button></p>
 </form>
 <%@include file="partials/footer.jsp" %>

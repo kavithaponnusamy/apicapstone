@@ -31,11 +31,7 @@
 
 		</form>
 </div>
-<form action="/result" method="post">
-Vote Average<input type="number" name="vote_average" step="any" >
-Length<input type="number" name="length" >
-<button type="submit">Submit</button>
-</form>
+
 
 <%@include file="partials/footer.jsp" %>
 </body>
