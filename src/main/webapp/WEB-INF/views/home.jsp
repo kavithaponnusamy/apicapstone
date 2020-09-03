@@ -11,5 +11,6 @@
 <input type="text" name="title">
 <button type="submit">Submit</button>
 </form>
+<%@include file="partials/footer.jsp" %>
 </body>
 </html>

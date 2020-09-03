@@ -8,6 +8,7 @@
 <title>Home</title>
 </head>
 <body>
+<h2 class="message">${ message }</h2>
 <table>
 	<tr>
 	<th>Title</th>
@@ -17,6 +18,7 @@
 			<td><a href="/movie-details?id=${movie.id}">${movie.title}</a></td>
 	</c:forEach>
 </table>
+<%@include file="partials/footer.jsp" %>
 
 </body>
 </html>
