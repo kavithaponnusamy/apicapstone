@@ -8,19 +8,22 @@
 <title>details </title>
 </head>
 <body>
-<h1>${movie.title}</h1>
+<!--  <h1>${movie.title}</h1>-->
 <br>
 <h2 class="message">${ message }</h2>
+<h1>${movie.title}</h1>
 <br>
-<h3>${movie.tagline }</h3>
-<h3>${movie.vote_average }</h3>
-<p>${movie.overview}</p>
-<p>${movie.runtime }</p>
+<h3>Tagline: ${movie.tagline }</h3>
+<h3>Vote Average: ${movie.vote_average }</h3>
+<p><Strong>Overview:</Strong> ${movie.overview}</p>
+<p><Strong>Length of the movie:</Strong> ${movie.runtime }</p>
+<p><Strong>Genre: </Strong>
 <c:forEach var="genre" items="${movie.genres }">
 <p>${genre.name}</p>
-
 </c:forEach>
+</p>
 <div>
+
 <form method="post">
 			<input type="hidden" name="title" value="${movie.title}">
 			<input type="hidden" name="runtime" value="${movie.runtime}">
@@ -31,7 +34,7 @@
 
 		</form>
 </div>
-
+<p> <p>
 
 <%@include file="partials/footer.jsp" %>
 </body>

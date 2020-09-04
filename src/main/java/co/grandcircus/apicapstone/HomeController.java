@@ -77,7 +77,7 @@ public class HomeController {
 	//display the list of movies for the passed genre
 	@PostMapping("/genre-list")
 	public String submitGenre(Model model, @RequestParam("genres") Integer genres) {
-		
+		model.addAttribute("genres", ms.getAllGenres());//added to load the genres again
 		model.addAttribute("movies", ms.getMoviesByGenre(genres));
 		return "genre-list";
 	}
@@ -87,7 +87,7 @@ public class HomeController {
 		List<Movie> temp=ms.getMovies();
 		List<Movie> movies=new ArrayList<>();
 		for(int i=0;i<temp.size();i++) {
-			if(temp.get(i).getVote_average()>=vote_average && temp.get(i).getVote_average()<vote_average+1){
+			if(temp.get(i).getVote_average()>vote_average-1 && temp.get(i).getVote_average()<vote_average+1){
 				movies.add(ms.getMovieById(temp.get(i).getId()));
 			}
 		}

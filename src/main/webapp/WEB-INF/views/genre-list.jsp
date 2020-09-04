@@ -14,6 +14,19 @@
 			<a href="/genre-list?id=${genre.id}">${genre.name}</a>
 	</c:forEach>-->
 	<h1>Select a genre to see the top movies of that genre</h1>
+	<form method="post">	
+	<select name="genres">
+	
+					<c:forEach var="genre" items="${genres}">
+
+						<option value="${genre.id}">${genre.name}
+					<!-- 	<c:out value="${genre.name}" /> -->
+						</option>
+						</c:forEach>
+						</select>&nbsp;&nbsp;&nbsp;
+						<button type="submit" class="btn btn-warning">submit</button>
+						</form>
+						<br><br>
 	<table>
 	<tr>
 	<th>Title</th>
@@ -22,22 +35,12 @@
 		<tr>
 			<td><a href="/movie-details?id=${movie.id}">${movie.title}</a></td>
 	</c:forEach>
-</table>
-	<br><br>
-	<form method="post">
-	<select name="genres">
-					<c:forEach var="genre" items="${genres}">
-
-						<option value="${genre.id}">
-						<c:out value="${genre.name}" />
-						</option>
-						</c:forEach>
-						</select>
-						<button type="submit" class="btn btn-warning">submit</button>
-						</form>
+ </table>
+	
+	
 						
 	
-
+<br><br> 
 <%@include file="partials/footer.jsp" %>
 </body>
 </html>

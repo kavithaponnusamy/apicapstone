@@ -8,24 +8,22 @@
 <title>Home</title>
 </head>
 <body>
-<h2 class="message">${ message }</h2>
+  <h2 class="message">${ message }</h2> 
+<h3>List of movies</h3>
 <table>
-	<tr>
-	<th>List of movies</th>
-	</tr>
 	<c:forEach var="movie" items="${movies }">
 		<tr>
 			<td><a href="/movie-details?id=${movie.id}">${movie.title}</a></td>
 	</c:forEach>
 </table>
-<br><br>
+<br>
 <p><a href="/genre-list">List of Available Genres</a></p>
 <form action="/search-result-vote" method="post">
-<p>Vote Average<input type="number" name="vote_average" step="any" >
+<p>Vote Average<input type="number" name="vote_average" step="any" > + or - 1
 <button type="submit">Submit</button></p>
 </form>
 <form action="/search-result-length" method="post">
-<p>Length<input type="number" name="runtime" >
+<p>Length<input type="number" name="runtime" >+ or - 10
 <button type="submit">Submit</button></p>
 </form>
 <%@include file="partials/footer.jsp" %>
