@@ -19,11 +19,11 @@
 <br>
 <p><a href="/genre-list">List of Available Genres</a></p>
 <form action="/search-result-vote" method="post">
-<p>Vote Average<input type="number" name="vote_average" step="any" > + or - 1
+<p>Vote Average: <input type="number" name="vote_average" step="any" > + or - 1
 <button type="submit">Submit</button></p>
 </form>
 <form action="/search-result-length" method="post">
-<p>Length<input type="number" name="runtime" >+ or - 10
+<p>Length: <input type="number" name="runtime" >+ or - 10
 <button type="submit">Submit</button></p>
 </form>
 <%@include file="partials/footer.jsp" %>
