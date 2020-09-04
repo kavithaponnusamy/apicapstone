@@ -1,4 +1,4 @@
-package co.grandcircus.apicapstone;
+package co.grandcircus.apicapstone.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

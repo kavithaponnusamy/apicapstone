@@ -24,7 +24,7 @@
 						</option>
 						</c:forEach>
 						</select>&nbsp;&nbsp;&nbsp;
-						<button type="submit" class="btn btn-warning">submit</button>
+						<button type="submit" class="btn btn-warning">Submit</button>
 						</form>
 						<br><br>
 	<table>

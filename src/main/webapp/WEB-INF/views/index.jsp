@@ -9,7 +9,7 @@
 </head>
 <body>
   <h2 class="message">${ message }</h2> 
-<h3>List of movies</h3>
+<h2>List of movies</h2>
 <table>
 	<c:forEach var="movie" items="${movies }">
 		<tr>
