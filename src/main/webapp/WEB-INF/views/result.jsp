@@ -15,6 +15,8 @@
 <p>Avg: ${movie.vote_average }<p>
 <p>Runtime: ${movie.runtime }</p>
 </c:forEach>
+
+
 <%@include file="partials/footer.jsp" %>
 </body>
 </html>

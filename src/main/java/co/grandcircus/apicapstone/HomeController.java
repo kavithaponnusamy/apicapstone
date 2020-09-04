@@ -88,6 +88,7 @@ public class HomeController {
 				movies.add(ms.getMovieById(temp.get(i).getId()));
 			}
 		}
+		model.addAttribute("vote_average",vote_average);
 		model.addAttribute("movies", movies);
 		return "result";
 	}
@@ -104,6 +105,7 @@ public class HomeController {
 				movies.add(m);
 			}
 		}
+		model.addAttribute("runtime",runtime);
 		model.addAttribute("movies", movies);
 		return "result";
 	}
