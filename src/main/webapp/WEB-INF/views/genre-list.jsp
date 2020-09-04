@@ -13,7 +13,7 @@
 		
 			<a href="/genre-list?id=${genre.id}">${genre.name}</a>
 	</c:forEach>-->
-	<h1>Select a genre to see the top movies of that genre</h1>
+	<h1>Select a genre to see the top movies</h1>
 	<form method="post">	
 	<select name="genres">
 	
