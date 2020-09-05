@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import co.grandcircus.apicapstone.entity.Genre;
 import co.grandcircus.apicapstone.entity.GenreResponse;
 import co.grandcircus.apicapstone.entity.Movie;
@@ -35,5 +34,6 @@ public class MovieService {
 		String url ="https://api.themoviedb.org/3/discover/movie?api_key=59dc340e2f77e64f2528ec302a03a8f6&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + id;
 		return rt.getForObject(url, MovieResponse.class).getResults();
 	}
+	
 }
 

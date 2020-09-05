@@ -4,15 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/style.css" rel="stylesheet" />
 <meta charset="UTF-8">
-<title>details </title>
+<title>Home</title>
+ <link href="style.css" rel="stylesheet" />
+
 </head>
 <body>
 <!--  <h1>${movie.title}</h1>-->
 <br>
 <h2 class="message">${ message }</h2>
 <h1>${movie.title}</h1>
-<br>
+<img src="http://image.tmdb.org/t/p/original${movie.poster_path}"/>
+<p> </p>
 <h3>Tagline: ${movie.tagline }</h3>
 <h3>Vote Average: ${movie.vote_average }</h3>
 <p><Strong>Overview:</Strong> ${movie.overview}</p>
@@ -21,7 +25,6 @@
 <c:forEach var="genre" items="${movie.genres }">
 <p>${genre.name}</p>
 </c:forEach>
-</p>
 <div>
 
 <form method="post">

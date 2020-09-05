@@ -6,11 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-//@Entity
-public class Movie {
-
-	//@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Movie {	
 	private Integer id;
 	private String title;
 	private String overview; 
@@ -19,27 +15,7 @@ public class Movie {
 	private Double vote_average;
 	private String tagline;
 	private Integer runtime;
-	
-	
-	public Movie() {
-		
-	}
-	
-	
-	public Movie(Integer id, String title, String overview, String release_date, List<Genre> genres,
-			Double vote_average, String tagline, Integer runtime) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.overview = overview;
-		this.release_date = release_date;
-		this.genres = genres;
-		this.vote_average = vote_average;
-		this.tagline = tagline;
-		this.runtime = runtime;
-	}
-
-
+	private String poster_path;
 	public Integer getId() {
 		return id;
 	}
@@ -87,6 +63,18 @@ public class Movie {
 	}
 	public void setRuntime(Integer runtime) {
 		this.runtime = runtime;
+	}
+	public String getPoster_path() {
+		return poster_path;
+	}
+	public void setPoster_path(String poster_path) {
+		this.poster_path = poster_path;
+	}
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", title=" + title + ", overview=" + overview + ", release_date=" + release_date
+				+ ", genres=" + genres + ", vote_average=" + vote_average + ", tagline=" + tagline + ", runtime="
+				+ runtime + ", poster_path=" + poster_path + "]";
 	}
 	
 	
